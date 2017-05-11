@@ -1,0 +1,128 @@
+// Clearfix
+// -------------
+=clearfix
+  &:before, &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
+=text-hide
+  font: #{0/0} a
+  color: transparent
+  text-shadow: none
+  background-color: transparent
+  border: 0
+
+.clearfix
+  +clearfix
+
+.pull-right
+  float: right
+
+.pull-left
+  float: left
+
+// Toggling content
+// -------------
+.hide
+  display: none
+
+.show
+  display: block
+
+.invisible
+  visibility: hidden
+
+.text-hide
+  +text-hide
+
+.hidden
+  visibility: hidden
+
+.fixed
+  position: fixed
+
+// Text
+.nowrap
+  white-space: nowrap
+.small
+  font-size: 75%
+
+.text-italic
+  font-style: italic
+.text-bold
+  font-weight: bold
+
+.text-left
+  text-align: left
+.text-right
+  text-align: right
+.text-centered
+  text-align: center
+.text-justify
+  text-align: justify
+.text-nowrap
+  white-space: nowrap
+.text-lowercase
+  text-transform: lowercase
+.text-uppercase
+  text-transform: uppercase
+.text-capitalize
+  text-transform: capitalize
+.text-muted
+  color: $text-muted
+.text-gray
+  color: $text_color
+.text-primary
+  color: $brand-primary
+.text-success
+  color: $state-success_text
+.text-info
+  color: $state-info_text
+.text-warning
+  color: $state-warning_text
+.text-danger
+  color: $state-danger_text
+
+// Margins & Paddings
+.m-none
+  margin: 0
+.m-t-xs
+  margin-top: 10px
+.m-t-sm
+  margin-top: 20px
+.m-t-md
+  margin-top: 30px
+.m-t-lg
+  margin-top: 40px
+.m-t-45
+  margin-top: 45px
+
+.m-r-xs
+  margin-right: 10px
+.m-r-sm
+  margin-right: 20px
+
+.m-b-none
+  margin-bottom: 0
+.m-b-xs
+  margin-bottom: 10px
+.m-b-sm
+  margin-bottom: 20px
+
+.m-l-xs
+  margin-left: 10px
+
+.p-r-none
+  padding-right: 0
+.p-l-none
+  padding-left: 0
+
+
+// PDF
+.show_on_pdf
+  display: none
+
+.page_break
+  display: none

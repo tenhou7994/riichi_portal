@@ -1,0 +1,94 @@
+// Colors
+// -------------
+$gray-base:               #000 !default
+$gray-darker:             #434140 !default
+$gray-dark:               #504F4D !default
+$gray:                    #6D6B69 !default
+$gray-light:              #C7C7C7 !default
+$gray-lighter:            #E8E8E8 !default
+
+$brand-primary:           #27B394 !default
+$brand-success:           #5cb85c !default
+$brand-info:              #5bc0de !default
+$brand-warning:           #f0ad4e !default
+$brand-danger:            #d9534f !default
+
+
+// Scaffolding
+// -------------
+$body_bg:                 #F3F3F4 !default
+$text_color:              $gray-dark !default
+$link_color:              #2A97C6 !default
+// $link_color:              #1c5c76 !default
+$link_color-hover:        darken($link_color, 7%) !default
+$link_decoration-hover:   underline !default
+
+
+//== Grid system
+
+$font-size-base:            14px !default
+$grid-columns:              12 !default
+$grid-gutter-width:         30px !default
+$line-height-base:          1.428571429 !default // 20/14
+$line-height-computed:      floor(($font-size-base * $line-height-base)) !default // ~20px
+
+// Type
+// -------------
+$component_offset-horizontal: 180px !default
+$text-muted:                  $gray-light !default
+$text-marked:                 #fcfcd1
+$abbr_border_color:           $gray-light !default
+$headings-small_color:        $gray-light !default
+$blockquote-small_color:      $gray-light !default
+$blockquote_font_size:        ($font_size-base * 1.25) !default
+$blockquote_border_color:     $gray-lighter !default
+$page__header_border_color:   $gray-lighter !default
+$dl_offset-horizontal:        $component_offset-horizontal !default
+$hr_border:                   $gray-lighter !default
+
+//-- Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+//
+// Note: These variables are not generated into the Customizer.
+
+$zindex-branding:          0
+$zindex-container:         10
+$zindex-footer:            20
+$zindex-backdrop:          900 !default
+$zindex-navbar:            1000 !default
+$zindex-dropdown:          1000 !default
+$zindex-popover:           1060 !default
+$zindex-tooltip:           1070 !default
+$zindex-navbar-fixed:      1030 !default
+$zindex-modal-background:  1040 !default
+$zindex-modal:             1050 !default
+
+//== Navbar
+// Basics of a navbar
+$navbar-height:                    120px !default
+$navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default
+$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default
+$navbar-collapse-max-height:       340px !default
+
+//== Form states and alerts
+//
+//## Define colors for form feedback states and, by default, alerts.
+
+$state-success-text:             #3c763d !default
+$state-success-bg:               #dff0d8 !default
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default
+
+$state-info-text:                #31708f !default
+$state-info-bg:                  #d9edf7 !default
+$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%) !default
+
+$state-warning-text:             #8a6d3b !default
+$state-warning-bg:               #fcf8e3 !default
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default
+
+$state-danger-text:              #a94442 !default
+$state-danger-bg:                #f2dede !default
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default
+
