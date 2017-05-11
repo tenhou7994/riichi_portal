@@ -25,15 +25,13 @@ gem 'slim'
 gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
 #u
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 gem 'unicorn', :require => false
 #w
 gem 'whenever', :require => false
 
 group :assets do
-  gem 'closure-compiler'
   gem 'coffee-rails'
-  gem 'yui-compressor'
 end
 
 group :development do
@@ -43,3 +41,6 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem "rails_12factor"
+end
