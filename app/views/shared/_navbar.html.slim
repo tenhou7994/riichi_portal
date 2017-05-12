@@ -3,6 +3,28 @@
     .navbar__header
       .header__list
         .header__list__logo
+          h2
+            = "Риичи-маджонг в России"
         .header__list__elements
-          = link_to "http://tesuji.ru"
+          / = link_to "http://tesuji.ru"
     .navbar__navs__menu
+      .navbar__header__list
+      ul.navbar__navs
+        / li.navs__menu
+          / li class="#{'active' if (controller_name == 'about' )}"
+        li class="#{'active'}"
+          = link_to 'Об игре', '#', :data => { :toggle => "dropdown" }, class: 'navbar__navs__dropdown'
+          ul@backgroundHover class='navbar__navs-dropdown-menu'
+            li
+              = link_to 'Основные правила', "#"
+            li
+              = link_to 'История',"#"
+        li class="#{'active'}"
+          = link_to 'Новости', '#', :data => { :toggle => "dropdown" }, class: 'navbar__navs__dropdown'
+        li class="#{'active'}"
+          = link_to 'Турниры', '#', :data => { :toggle => "dropdown" }, class: 'navbar__navs__dropdown'
+        li class="#{'active'}"
+          = link_to 'Рейтинг', '#', :data => { :toggle => "dropdown" }, class: 'navbar__navs__dropdown'
+        li class="#{'active'}"
+          = link_to 'Клубы', '#', :data => { :toggle => "dropdown" }, class: 'navbar__navs__dropdown'
+

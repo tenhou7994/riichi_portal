@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 #a
 gem 'authlogic'
+#b
+gem 'bootstrap-sass'
 #d
 gem 'draper'
 #f
@@ -18,6 +20,7 @@ gem 'nilify_blanks'
 gem 'pg'
 #r
 gem 'rails', '4.2.6'
+gem 'role-rails'
 #s
 gem 'sassc-rails'
 gem 'slim'

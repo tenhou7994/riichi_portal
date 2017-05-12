@@ -14,6 +14,70 @@
   .navbar__header__list
     display: none
 
+.navbar-small
+  a
+    text-transform: uppercase
+    font-size: 13px
+    font-weight: normal
+    color: #000
+    margin-left: 0
+    line-height: 19px
+    i
+      opacity: 0.5
+      transition: .2 opacity
+    &:hover
+      i
+        opacity: 1
+  min-height: 50px
+  .navbar__header
+    display: none
+  .navbar__logo
+    display: none
+  // .navbar__logo-xs
+  //   display: block
+  .navbar__header__list
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+  .navbar__navs__profile
+    display: flex
+    margin-left: 25px
+
+  .navbar__navs__logo
+    display: flex
+
+.navbar__logo
+  padding-right: 35px
+  border-right: 1px solid #e5e5e5
+
+.navbar__logo-wedding
+  opacity: 0.5
+  padding-left: 25px
+  border-left: 1px solid #666666
+
+.navbar__navs__logo
+  max-width: 185px
+  width: 100%
+  display: flex
+  justify-content: flex-star
+  margin-top: 15px
+
+.navbar__navs__elements
+  display: flex
+  justify-content: space-between
+  margin-top: 15px
+
+.navbar__logo-xs
+  // display: none
+  // text-indent: -3000px
+  width: 32px
+  height: 31px
+  margin-right: 25px
+  // background: asset-data-url("logo-xs.png") 0 0 / contain no-repeat
+  a
+    display: none
+
 .navbar__header
   position: relative
   margin: 0
@@ -33,14 +97,36 @@
       i
         opacity: 1
 
+.navbar__navs__profile
+  display: none
+  float: right
+  list-style: none
+
 .navbar__header__logo
   position: relative
   margin: 0 auto
   width: 291px
   height: 46px
 
+.navbar__header__left
+  position: absolute
+  top: 28px
+  margin: 0
+  padding: 0
+  list-style: none
+  transition: all .3s
+  li
+    display: inline-block
+    margin: 0 20px 0 0
 
 .header__list
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+.header__list__logo
+  max-width: 410px
+  width: 100%
   display: flex
   flex-direction: row
   justify-content: space-between
@@ -53,7 +139,180 @@
   justify-content: space-between
   padding-top: 8px
 
+.navbar__header__auth
+  position: relative
+  display: block
+  margin-left: 10px
+  line-height: 23px!important
+  right: 0
+  padding: 0
+  transition: all .3s
+  margin-left: 25px
+  i
+    position: relative
+    // top: 3px
+
+.navbar__header__auth-notification
+  &:after
+    content: '1'
+    position: absolute
+    bottom: -2px
+    left: 15px
+    width: 15px
+    height: 15px
+    text-align: center
+    font-size: 10px
+    line-height: 15px
+    font-weight: bold
+    color: #FFF
+    border-radius: 100%
+    background: red
+
+
+// Navbar links
+// -----------------
+.navbar__navs
+  display: block
+  justify-content: space-between
+  align-items: center
+  margin: 0
+  padding: 0
+  > li
+    position: relative
+    display: inline-block
+    margin: 0
+    vertical-align: middle
+    > a
+      display: block
+      padding: 15px 20px
+      text-transform: uppercase
+      text-decoration: none
+      color: #000
+      font-size: 16px
+      font-family: $font-family-open-sans
+      &.navbar__navs__dropdown
+        position: relative
+        padding-right: 38px
+        &:after
+          content: "\f107"
+          position: absolute
+          top: 17px
+          right: 20px
+          font-family: FontAwesome
+          font-size: 15px
+          color: #000
+
+    &.active > a
+      &, &:hover, &:focus
+        cursor: default
+        box-shadow: inset 0 -1px 0  #000000
+    &.open
+      background: #484848
+      > a
+        color: #fff
+        &, &:hover, &:focus
+          box-shadow: none
+        &.navbar__navs__dropdown
+          &:after
+            color: #fff
+    &:last-child
+      margin: 0
 
 .navs__menu
   opacity: 0.45
   padding-left: 0
+
+// The dropdown menu (ul)
+.navbar__navs-dropdown-menu
+  position: absolute
+  top: 100%
+  left: 0
+  z-index: $zindex-dropdown
+  display: none // none by default, but block on "open" of the menu
+  float: left
+  min-width: 160px
+  padding: 0
+  margin: 0
+  list-style: none
+  font-size: $font-size-base
+  text-align: left // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  background-color: #002020
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-clip: padding-box
+  > li
+    > a
+      display: block
+      padding: 12px 20px
+      clear: both
+      font-size: 18px
+      font-family: $font-family-open-sans
+      line-height: $line-height-base
+      color: #fff !important
+      +link-no_underlined(#fff, #fff)
+      text-transform: uppercase
+      white-space: nowrap // prevent links from randomly breaking onto new lines
+      border-left: 2px solid rgba(0,0,0,0)
+
+li > a.navbar__navs__dropdown:hover
+  color: #fff
+  background: #002020
+  &:after
+    color: #fff
+.navbar__navs__dropdown:hover + .navbar__navs-dropdown-menu
+  display: block
+
+.navbar__navs-dropdown-menu:hover
+  display: block
+li > a.navbar__navs__dropdown + .navbar__navs-dropdown-menu:hover
+  background: #002020
+.navbar__navs-dropdown-background
+  background: #002020
+  a
+    color: #fff!important
+    &:after
+      color: #fff!important
+// Hover/Focus state
+.navbar__navs-dropdown-menu
+  > li
+    > a
+      &:hover,&:focus
+        text-decoration: none
+        color: #fff !important
+        background-color: #008080
+        border-left: 2px solid #ff004e
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        // background-color: $dropdown-link-hover-bg
+
+// Active state
+.navbar__navs-dropdown-menu
+  > .active
+    > a
+      &,&:hover,&:focus
+        text-decoration: none
+        color: #fff !important
+        background-color: #666666
+        border-left: 2px solid #ff004e
+        // background-color: $dropdown-link-active-bg
+
+.navbar__navs-dropdown-menu-right
+  left: auto
+  right: 0
+
+// Open state for the dropdown
+.open
+  > .navbar__navs-dropdown-menu
+    display: block
+  > a
+    outline: 0
+
+
+.navbar__header__avatar
+  width: 25px
+  border-radius: 100%
+  float: left
+  margin-right: 6px
+
+
+

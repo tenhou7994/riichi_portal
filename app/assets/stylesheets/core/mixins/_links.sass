@@ -1,0 +1,8 @@
+=link-no_underlined($color: $link_color, $color-hover: $link-hover-color, $color-visited: $color)
+  color: $color
+  text-decoration: none
+  &:visited
+    color: $color-visited
+  &:hover, &.active, &:focus
+    text-decoration: none
+    color: $color-hover
