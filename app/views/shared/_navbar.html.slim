@@ -4,7 +4,7 @@
       .header__list
         .header__list__logo
           h2
-            = "Риичи-маджонг в России"
+            = t('.main_title')
         .header__list__elements
           - if current_user.blank?
             = simple_form_for :session, url: sign_in_url, method: :post, class: 'navbar__header__auth' do |login_form|
@@ -12,6 +12,9 @@
               = login_form.input :password
               = login_form.submit "Войти"
           - else
+            => t(".hello")
+            => current_user.display_name
+            => "!"
             / = link_to edit_my_user_url(current_user, subdomain: :my), class: "navbar__header__auth #{'navbar__header__auth-notification' unless current_user.login_delete_notified}"
             /   = current_user.decorate.avatar_image(class: 'img-responsive navbar__header__avatar')
             /   = current_user.decorate.display_name

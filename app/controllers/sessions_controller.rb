@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     if create_session(params[:session])
       self.reset_authlogic
 
-      flash[:notice] = "Welcome back #{current_user.contact.display_name}"
+      flash[:notice] = "Welcome back #{current_user.display_name}"
 
       url = if session[:return_to].present?
         session[:return_to]

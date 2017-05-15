@@ -28,10 +28,12 @@ class User < ActiveRecord::Base
 
   def self.find_by_lowercase_email_or_login(login)
     self.where(arel_table[:login].lower.eq(login.downcase).or(arel_table[:email].lower.eq(login.downcase))).first
+    # User.last
   end
 
   def self.find_by_lowercase_email_or_login!(login)
     self.where(arel_table[:login].lower.eq(login.downcase).or(arel_table[:email].lower.eq(login.downcase))).first
+    # User.last
   end
 
 #public methods

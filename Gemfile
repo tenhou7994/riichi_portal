@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 #a
-gem 'authlogic'
+gem 'authlogic', '~> 3.4.6'
 #b
 gem 'bootstrap-sass'
 #d

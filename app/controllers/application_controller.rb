@@ -8,13 +8,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def create_session(user, id = :public)
-
     var = (id.nil? ? '@current_session' : "@current_#{id}_session")
     instance_variable_set(var, User::Session.new(user))
-    session = instance_variable_get(var)
-    session.remember_me = true
-    session.id = :public
-    session.save
+    ses = instance_variable_get(var)
+    ses.remember_me = true
+    ses.id = :public
+    ses.save
   end
 
 protected
