@@ -12,10 +12,8 @@ class ApplicationController < ActionController::Base
     var = (id.nil? ? '@current_session' : "@current_#{id}_session")
     instance_variable_set(var, User::Session.new(user))
     session = instance_variable_get(var)
-    puts session.valid?, session.errors.full_messages
     session.remember_me = true
     session.id = :public
-    puts '@@@@', session.save, session, session.errors.full_messages
     session.save
   end
 

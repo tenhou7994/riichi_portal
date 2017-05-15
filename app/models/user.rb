@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_by_lowercase_email_or_login!(login)
-    self.where(arel_table[:login].lower.eq(login.downcase).or(arel_table[:email].lower.eq(login.downcase))).first || raise ActiveRecord::RecordNotFound
+    self.where(arel_table[:login].lower.eq(login.downcase).or(arel_table[:email].lower.eq(login.downcase))).first
   end
 
 #public methods
