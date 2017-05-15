@@ -11,6 +11,8 @@ gem 'bootstrap-sass'
 gem 'draper'
 #f
 gem 'font-awesome-rails'
+#h
+gem 'http'
 #j
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
@@ -24,6 +26,7 @@ gem 'role-rails'
 #s
 gem 'sassc-rails'
 gem 'slim'
+gem 'simple_form'
 #t
 gem 'therubyracer', platforms: :ruby
 gem 'turbolinks'
