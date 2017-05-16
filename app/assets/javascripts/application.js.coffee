@@ -4,6 +4,7 @@
 #= require role
 #= require jquery.role
 #= require bootstrap
+#= require bootstrap-sprockets
 class RiichiPortal
   constructor: (@$container) ->
     self = this
