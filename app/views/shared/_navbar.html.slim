@@ -6,7 +6,7 @@
 
     - if current_user.blank?
       .col-md-6
-        = simple_form_for :session, url: sign_in_url, method: :post,  html: {class: "form-inline", style: "padding-top: 20px", role: 'form'} do |login_form|
+        = simple_form_for :session, url: sign_in_url, method: :post,  html: {class: "form-inline m-t-20", role: 'form'} do |login_form|
           .form-group.col-md-5
             = login_form.input :login, label: false, placeholder: "Login", input_html: { class: 'form-control input-lg' }
           .form-group.col-md-5
@@ -14,31 +14,32 @@
           .form-group.col-md-2
             = login_form.submit "Войти", class: 'btn btn-default'
     - else
-      .col-md-2.col-md-offset-3
-        => t(".hello")
-        => current_user.display_name
-        => "!"
-      .col-md-1
-        => link_to t('.logout'), sign_out_url, method: :delete
+      .col-md-4.col-md-offset-1.m-t-20
+        h4
+          => t(".hello")
+          => current_user.display_name
+          => "!"
+      .col-md-1.m-t-20
+        => link_to t('.logout'), sign_out_url, method: :delete, class: 'btn btn-default'
           / = link_to edit_my_user_url(current_user, subdomain: :my), class: "navbar__header__auth #{'navbar__header__auth-notification' unless current_user.login_delete_notified}"
           /   = current_user.decorate.avatar_image(class: 'img-responsive navbar__header__avatar')
           /   = current_user.decorate.display_name
   .container
     .row
-      ul.navbar__navs
+      ul.navbar__navs{style='margin-top: 20px'}
         li class="#{'active'}"
-          = link_to 'Об игре', '#', :data => { :toggle => "dropdown" }, class: 'navbar__navs__dropdown'
+          = link_to t('.about'), '#', :data => { :toggle => "dropdown" }, class: 'navbar__navs__dropdown'
           ul@backgroundHover class='navbar__navs-dropdown-menu'
             li
-              = link_to 'Основные правила', "#"
+              = link_to t('.rules'), "#"
             li
-              = link_to 'История',"#"
+              = link_to t('.history'),"#"
         li class="#{'active'}"
-          = link_to 'Новости', '#', :data => { :toggle => "dropdown" }
+          = link_to t('.news'), '#', :data => { :toggle => "dropdown" }
         li class="#{'active'}"
-          = link_to 'Турниры', '#', :data => { :toggle => "dropdown" }
+          = link_to t('.tournaments'), '#', :data => { :toggle => "dropdown" }
         li class="#{'active'}"
-          = link_to 'Рейтинг', '#', :data => { :toggle => "dropdown" }, class: 'navbar__navs__dropdown'
+          = link_to t('.rating'), '#', :data => { :toggle => "dropdown" }, class: 'navbar__navs__dropdown'
         li class="#{'active'}"
-          = link_to 'Клубы', '#', :data => { :toggle => "dropdown" }, class: 'navbar__navs__dropdown'
+          = link_to t('.clubs'), '#', :data => { :toggle => "dropdown" }, class: 'navbar__navs__dropdown'
 
