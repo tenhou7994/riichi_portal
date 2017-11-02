@@ -9,6 +9,8 @@ gem 'authlogic', '~> 3.4.6'
 gem 'bootstrap-sass'
 #d
 gem 'draper'
+gem 'dry-validation'
+gem 'dry-monads'
 #f
 gem 'font-awesome-rails'
 #h
@@ -22,6 +24,8 @@ gem 'nilify_blanks'
 gem 'pg'
 #r
 gem 'rails', '4.2.6'
+gem 'reform'
+gem "reform-rails"
 gem 'role-rails'
 #s
 gem 'sassc-rails'
@@ -43,7 +47,6 @@ end
 group :development do
   gem 'better_errors'
   gem 'web-console', '~> 2.0'
-
   gem 'spring'
 end
 

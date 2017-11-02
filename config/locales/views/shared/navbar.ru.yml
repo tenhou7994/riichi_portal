@@ -3,8 +3,10 @@ ru:
     navbar:
       main_title: "Риичи-маджонг в России"
       hello: "Приветствуем, "
-      logout: "Выйти"
-      about: Об игре
+      login: Войти
+      register: Регистрация
+      logout: Выйти
+      about: "Об игре"
       rules: Правила
       history: История
       news: Новости

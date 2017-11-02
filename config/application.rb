@@ -1,6 +1,20 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'dry-validation'
+
+$default_schema = Dry::Validation.Schema do
+  configure do
+    option :record
+    def unique?(attr_name, value)
+      record.class.where.not(id: record.id).where(attr_name => value).empty?
+    end
+
+    def blank?(attribute)
+      self[attribute].blank?
+    end
+  end
+end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -20,6 +34,8 @@ module RiichiPortal
     config.autoload_paths += Dir[Rails.root.join('lib').to_s]
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ru
+    config.reform.validations = :dry
+    config.reform.schema = $default_schema
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
