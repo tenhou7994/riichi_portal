@@ -12,4 +12,13 @@ class UsersController < ApplicationController
   def update
   end
 
+protected
+  def resource_form
+
+  end
+
+  def method_name
+
+  end
+
 end

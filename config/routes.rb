@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   delete 'sign_out' => 'sessions#destroy'
   root to: 'main#index'
 
+  resources :users
+
 end

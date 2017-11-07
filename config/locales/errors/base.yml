@@ -1,0 +1,12 @@
+ru:
+  errors:
+    unique?: "must be unique"
+    filled?: "must be filled"
+en:
+  errors:
+    unique?: "must be unique"
+    filled?: "must be filled"
+jp:
+  errors:
+    unique?: "must be unique"
+    filled?: "must be filled"
